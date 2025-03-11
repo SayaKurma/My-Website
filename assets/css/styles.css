@@ -12,8 +12,8 @@ header {
     color: #fff;
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
     position: relative;
 }
 
@@ -143,6 +143,20 @@ body.dark-mode footer {
 }
 
 @media (max-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .theme-toggle {
+        order: 1;
+    }
+
+    .nav-toggle {
+        order: 2;
+    }
+
     nav {
         display: none;
     }
