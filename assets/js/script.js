@@ -13,3 +13,12 @@ navLinks.forEach(link => {
         navToggle.classList.remove('active');
     });
 });
+
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDarkMode = body.classList.contains('dark-mode');
+    themeToggle.innerHTML = isDarkMode ? '🌙' : '🌞'; 
+});
