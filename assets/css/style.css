@@ -4,19 +4,54 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav-toggle {
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 nav {
     display: flex;
     justify-content: center;
     background-color: #444;
+    padding: 10px 0;
 }
 
 nav a {
@@ -24,6 +59,7 @@ nav a {
     padding: 14px 20px;
     text-decoration: none;
     text-transform: uppercase;
+    font-size: 14px;
 }
 
 nav a:hover {
@@ -36,18 +72,70 @@ nav a:hover {
 
 .homepage {
     text-align: center;
+    padding: 50px 20px;
 }
 
 .homepage img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
+    margin-bottom: 20px;
+}
+
+.homepage h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.homepage p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .homepage {
+        padding: 30px 10px;
+    }
+
+    .homepage h2 {
+        font-size: 24px;
+    }
+
+    .homepage p {
+        font-size: 14px;
+    }
 }
