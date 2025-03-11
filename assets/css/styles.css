@@ -23,7 +23,7 @@ header h1 {
 }
 
 .nav-toggle {
-    display: none; 
+    display: flex; 
     flex-direction: column;
     cursor: pointer;
     z-index: 1000;
