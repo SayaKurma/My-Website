@@ -129,3 +129,16 @@ document.addEventListener('click', (e) => {
         }
     }
 });
+
+// Hide loading screen after page is fully loaded
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        setTimeout(() => {
+            loadingScreen.classList.add('hide');
+            setTimeout(() => {
+                loadingScreen.remove();
+            }, 500); // Match the transition duration
+        }, 2000); // Adjust the delay as needed
+    }
+});
