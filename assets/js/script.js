@@ -96,7 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             blogLink.classList.toggle('active');
             const dropdownMenu = blogLink.nextElementSibling;
-            dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+            if (dropdownMenu) {
+                dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+            }
         });
     }
 
@@ -105,7 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const activeLink = document.querySelector('.blog-link.active');
             if (activeLink) {
                 activeLink.classList.remove('active');
-                activeLink.nextElementSibling.style.display = 'none';
+                const dropdownMenu = activeLink.nextElementSibling;
+                if (dropdownMenu) {
+                    dropdownMenu.style.display = 'none';
+                }
             }
         }
     });
