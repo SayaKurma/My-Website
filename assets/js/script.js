@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
     const loadingScreen = document.getElementById('loading-screen');
     const particles = document.querySelectorAll('.particle');
-    
+
     navToggle.setAttribute('aria-expanded', 'false');
     navToggle.setAttribute('aria-controls', 'navMenu');
     navMenu.setAttribute('aria-hidden', 'true');
-    
+
     navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         navToggle.classList.toggle('active');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.setAttribute('aria-expanded', !expanded);
         navMenu.setAttribute('aria-hidden', expanded);
     });
-    
+
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.setAttribute('aria-hidden', 'true');
         });
     });
-    
+
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark') {
         body.classList.add('dark-mode');
@@ -42,14 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
             themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
         }
     }
-    
+
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
         const isDarkMode = body.classList.contains('dark-mode');
         themeToggle.innerHTML = isDarkMode ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
         localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     });
-    
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
+
     const animatedText = document.querySelector('.animated-text');
     if (animatedText) {
         const text = animatedText.innerHTML;
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             typeWriter();
         }, 800);
     }
-    
+
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
         }
     });
-    
+
     const blogLink = document.querySelector('.blog-link');
     if (blogLink) {
         blogLink.addEventListener('click', (e) => {
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
         });
     }
-    
+
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.blog-link') && !e.target.closest('.dropdown-menu')) {
             const activeLink = document.querySelector('.blog-link.active');
@@ -109,14 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-    
+
     navToggle.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             navToggle.click();
         }
     });
-    
+
     particles.forEach(particle => {
         const randomX = Math.random() * window.innerWidth;
         const randomY = Math.random() * window.innerHeight;
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         particle.style.height = `${randomSize}px`;
         particle.style.animationDuration = `${randomSpeed}s`;
     });
-    
+
     window.addEventListener('load', () => {
         setTimeout(() => {
             loadingScreen.classList.add('hide');
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500);
         }, 1500);
     });
-    
+
     setTimeout(() => {
         if (loadingScreen && !loadingScreen.classList.contains('hide')) {
             loadingScreen.classList.add('hide');
