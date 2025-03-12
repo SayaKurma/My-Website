@@ -9,12 +9,29 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <!-- Loading Screen -->
     <div id="loading-screen">
         <div class="loading-content">
             <div class="loading-spinner"></div>
             <p>Loading...</p>
         </div>
+    </div>
+
+    <div class="particle-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
     </div>
 
     <header>
@@ -24,14 +41,14 @@
                 <div class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
                     <i class="fas fa-sun"></i>
                 </div>
-                <div class="nav-toggle" id="navToggle" title="Toggle Menu">
+                <div class="nav-toggle" id="navToggle" title="Toggle Menu" aria-expanded="false" aria-controls="navMenu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
         </div>
-        <nav id="navMenu">
+        <nav id="navMenu" aria-hidden="true">
             <div class="menu-container">
                 <div class="menu-column">
                     <h2>NAVIGASI</h2>
@@ -59,11 +76,16 @@
         </nav>
     </header>
 
+    <div class="anime-bg">
+        <div class="anime-overlay"></div>
+    </div>
+
     <div class="container">
         <section class="hero">
             <div class="hero-content">
                 <div class="profile-image-container">
                     <img src="assets/images/profile.jpg" alt="Foto Profil Muhammad Alfaridzi" class="profile-image">
+                    <div class="image-decoration"></div>
                 </div>
                 <div class="hero-text">
                     <h1 class="animated-text">Halo, Saya <span class="highlight">Muhammad Alfaridzi</span></h1>
@@ -91,4 +113,4 @@
 
     <script src="assets/js/script.js"></script>
 </body>
-</html>
+    </html>
