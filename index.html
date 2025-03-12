@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="header-container">
-            <h1 class="logo">M.Fariz</h1>
+            <h1 class="logo">Portfolio</h1>
             <div class="header-right">
                 <div class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
                     <i class="fas fa-sun"></i>
@@ -34,8 +34,18 @@
                 <div class="menu-column">
                     <h2>KONTEN</h2>
                     <div class="item"><a href="pages/gallery.html"><i class="fas fa-images"></i> Galeri</a></div>
-                    <div class="item"><a href="pages/blog.html"><i class="fas fa-blog"></i> Blog</a></div>
-                    <div class="item"><a href="pages/contact.html"><i class="fas fa-envelope"></i> Kontak</a></div>
+                    <div class="item">
+                        <a href="pages/blog.html" class="blog-link">
+                            <i class="fas fa-blog"></i> Blog <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="pages/blog/diary.html"><i class="fas fa-book"></i> Diary</a>
+                            <a href="pages/blog/review.html"><i class="fas fa-star"></i> Review</a>
+                            <a href="pages/blog/refleksi.html"><i class="fas fa-lightbulb"></i> Refleksi</a>
+                            <a href="pages/blog/opini.html"><i class="fas fa-comment"></i> Opini</a>
+                    </div>
+                </div>
+                    <div class="item"><a href="pages/contact.html"><i class="fas fa-share-alt"></i> Medsos</a></div>
                 </div>
             </div>
         </nav>
@@ -53,9 +63,8 @@
                     <p class="subtitle">Penulis & Fotografer</p>
                     <div class="social-links">
                         <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="YouTube"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
                         <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                     <div class="cta-buttons">
                         <a href="pages/works.html" class="btn primary-btn">Lihat Karya</a>
@@ -67,19 +76,6 @@
     </div>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">M.Fariz</div>
-            <div class="footer-links">
-                <a href="pages/about.html">Tentang</a>
-                <a href="pages/works.html">Karya</a>
-                <a href="pages/contact.html">Kontak</a>
-            </div>
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
         <div class="copyright">
             <p>© 2025 Muhammad Alfaridzi. All rights reserved.</p>
         </div>
