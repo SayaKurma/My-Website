@@ -102,11 +102,30 @@ document.addEventListener('DOMContentLoaded', () => {
     navToggle.setAttribute('aria-controls', 'navMenu');
     navMenu.setAttribute('aria-hidden', 'true');
     
-    // Add keyboard navigation for menu
     navToggle.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             navToggle.click();
         }
     });
+});
+
+const blogLink = document.querySelector('.blog-link');
+if (blogLink) {
+    blogLink.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        blogLink.classList.toggle('active'); 
+        const dropdownMenu = blogLink.nextElementSibling; 
+        dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex'; 
+    });
+}
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.blog-link') && !e.target.closest('.dropdown-menu')) {
+        const activeLink = document.querySelector('.blog-link.active');
+        if (activeLink) {
+            activeLink.classList.remove('active');
+            activeLink.nextElementSibling.style.display = 'none';
+        }
+    }
 });
